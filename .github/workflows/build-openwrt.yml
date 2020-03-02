@@ -112,7 +112,7 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
-        echo "::set-env name=FIRMWARE::$(pwd)"
+        echo "::set-env name=FIRMWARE::$(PWD)"
         echo "::set-output name=status::success"
 
     - name: Upload firmware directory
@@ -121,3 +121,11 @@ jobs:
       with:
         name: OpenWrt_firmware
         path: ${{ env.FIRMWARE }}
+
+    - name: Upload to release
+      uses: softprops/action-gh-release@v1
+      if: env.UPLOAD_RELEASE == 'true' && startsWith(github.ref, 'refs/tags/')
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      with:
+        files: ${{ env.FIRMWARE }}/*
