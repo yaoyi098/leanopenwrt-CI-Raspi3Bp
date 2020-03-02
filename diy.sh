@@ -9,7 +9,7 @@
 sed -i 's/192.168.1.1/10.0.0.254/g' package/base-files/files/bin/config_generate
 
 # Diasble dhcp for lan
-sed -i '29a\\ttoption\ ignore\ 1' package/network/services/dnsmasq/files/dhcp.conf
+sed -i '29a\ttoption\ ignore\ 1' package/network/services/dnsmasq/files/dhcp.conf
 
 # Modify the version number
 sed -i 's/OpenWrt/YYM build $(date "+%Y.%m.%d") @ OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
