@@ -1,0 +1,23 @@
+name: Create Release
+
+on:
+  schedule:
+    - cron: 0 8 * * 5
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate tag
+        run: |
+          echo ::set-env name=RELEASE_TAG::"$(TZ=UTC-8 date +"%Y.%m.%d")-Raspi3B+"
+      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ env.RELEASE_TAG }}
+          body: Actions 自动编译Lean OpenWRT 树莓派3B+固件。地址10.0.0.254，关闭DHCP。
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
