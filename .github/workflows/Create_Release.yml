@@ -20,4 +20,4 @@ jobs:
           tag_name: ${{ env.RELEASE_TAG }}
           body: Actions 自动编译Lean OpenWRT 树莓派3B+固件。地址10.0.0.254，关闭DHCP。
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
