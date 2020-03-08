@@ -6,6 +6,8 @@
 
 Build OpenWrt using GitHub Actions
 
+## Downloads
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/yaoyi098/leanopenwrt-CI-Raspi3Bp?style=for-the-badge&label=Download)](https://github.com/yaoyi098/leanopenwrt-CI-Raspi3Bp/releases/latest)
 
 ## License
 
