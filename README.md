@@ -11,5 +11,7 @@ Build OpenWrt using GitHub Actions
 
 ## License
 
+源码来自[Lean大](https://github.com/coolsnowwolf/lede)
+
 [MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE) © P3TERX
 
